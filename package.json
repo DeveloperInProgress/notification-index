@@ -21,7 +21,6 @@
   "license": "MIT",
   "devDependencies": {
     "@subql/cli": "latest",
-    "@subql/types-terra": "latest",
     "@terra-money/terra.js": "^3.0.8",
     "typescript": "^4.4.4"
   },

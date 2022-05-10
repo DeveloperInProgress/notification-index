@@ -96,18 +96,15 @@ export async function handleSaleMessage(msg: TerraMessage<Msg>): Promise<void> {
 
 const getTokenDetailsFromAuctionId = async (auction_id: number, height) => {
   try {
-    const details: any = await (global as any).unsafeApi.wasm.contractQuery(
+    const details: any = await (global as any).api.wasm.contractQuery(
       auction,
       {
         auction_details_by_id: {
           auction_id: auction_id,
         },
       },
-      {
-        height: Number(minus(height, 1)),
-      }
     );
-
+    
     // index 0 when auction concern a single nft
     return {
       creator: details.creator,
